@@ -49,11 +49,11 @@ Node_ptr find_node_at(List_ptr list, int position)
 
 Status insert_at(List_ptr list, int value, int position)
 {
-  if (position < 0 || position >= list->count)
+  if (position < 0 || position > list->count)
     return Failure;
   if (position == 0)
     return add_to_start(list, value);
-  if (position == list->count - 1)
+  if (position == list->count)
     return add_to_end(list, value);
   Node_ptr node = malloc(sizeof(Node));
   node->value = value;
