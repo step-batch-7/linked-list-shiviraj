@@ -10,6 +10,7 @@ void take_user_input(int *num)
 void perform_action(List_ptr list, char input_char)
 {
   int num, position;
+  Status status;
   switch (input_char)
   {
   case 'a':
@@ -63,6 +64,8 @@ void perform_action(List_ptr list, char input_char)
     break;
 
   case 'k':
+    take_user_input(&num);
+    is_include_in_list(list, num);
     break;
 
   case 'l':

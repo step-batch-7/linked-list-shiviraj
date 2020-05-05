@@ -120,7 +120,7 @@ Status remove_from_end(List_ptr list)
 
 Status remove_at(List_ptr list, int position)
 {
-  if (position < 0 && position > list->count)
+  if (position < 0 || position > list->count)
     return Failure;
   if (position == 0)
     return remove_from_start(list);
