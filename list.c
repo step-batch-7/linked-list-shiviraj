@@ -160,6 +160,7 @@ Status remove_first_occurrence(List_ptr list, int value)
     list->last = pair->prev;
   list->count--;
   free(pair->current);
+  free(pair);
   return Success;
 };
 
