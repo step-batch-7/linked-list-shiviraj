@@ -166,6 +166,8 @@ Status remove_first_occurrence(List_ptr list, int value)
 Status remove_all_occurrences(List_ptr list, int value)
 {
   Status is_include = is_include_in_list(list, value);
+  if (!is_include)
+    return Failure;
   while (is_include)
   {
     remove_first_occurrence(list, value);
